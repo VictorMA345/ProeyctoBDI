@@ -1,0 +1,40 @@
+ <form class="formulario" [formGroup]="profileForm" (ngSubmit)="CrearNota()">
+    
+    <html>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-arial">Crear Notas</h1>
+        </div>
+    </html>
+
+    <label class="apartados">
+        <p>Monto Neto:</p>
+        <input type="text" formControlName="monto" required pattern="[0-9].{0,}$">
+    </label> 
+
+    <label class="apartados">
+        <p>Factura a la que se le agregara la nota:</p>
+      <input type="text" formControlName="idFacturaC">
+    </label>
+  
+    <label class="apartados">
+        <p>Tipo:<br>
+            <select formControlName="tipo">
+            <option>Contado</option>
+            <option>Credito</option>
+            </select>
+        </p> 
+    </label>
+
+    <label class="apartados">
+        <p>Descripción:</p>
+        <textarea type="text" formControlName="descripcion" maxlength="200" rows="5"></textarea>
+    </label>  
+    
+    <label class="apartados">
+        <p>Fecha:</p>
+        <input type="text" placeholder="Año-Mes-Dia"  formControlName="fecha" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+    </label>
+
+    <button _ngcontent-vmx-c51="" class="apartados btn btn-lg btn-primary" type="submit" [disabled]="!profileForm.valid">Crear Nota</button>
+
+</form>

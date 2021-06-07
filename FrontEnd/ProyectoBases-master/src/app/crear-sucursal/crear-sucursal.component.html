@@ -1,0 +1,19 @@
+<form class="formulario" [formGroup]="profileForm" (ngSubmit)="CrearSucursal()">
+    <label class="apartados">
+      Identificacion Sucursal:
+      <input type="text" formControlName="idSucursal" required minlength="4" maxlength="4">
+    </label>
+  
+    <label class="apartados">
+      Nombre Sucursal:
+      <input type="text" formControlName="nombre">
+    </label>
+  
+    <label class="apartados">
+        Descripcion de la Sucursal:
+        <textarea type="text" formControlName="descripcion" maxlength="200" rows="5"></textarea>
+        
+    </label>
+    
+    <button class="apartados btn btn-primary btn-lg btn-block" type="submit" [disabled]="!profileForm.valid">Crear Sucursal</button>
+  </form>

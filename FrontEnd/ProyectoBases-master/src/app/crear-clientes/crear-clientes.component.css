@@ -1,0 +1,15 @@
+.formulario{
+    width: 50%;
+    background: rgb(81, 83, 81);
+    height: auto;
+    margin-left: 25%;
+    margin-top: 10%;
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+.apartados{
+    margin-top: 15px;
+    width: 50%;
+    margin-left: 25%;
+    display: inline-block;
+}

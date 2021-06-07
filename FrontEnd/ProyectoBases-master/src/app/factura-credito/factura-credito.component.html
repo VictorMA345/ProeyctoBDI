@@ -1,0 +1,53 @@
+
+
+<form class="formulario" [formGroup]="profileForm" (ngSubmit)="CrearFacturaCredito()">
+    
+    <html>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-arial">Facturas de Credito</h1>
+        </div>
+    </html>
+
+    <label class="apartados">
+        <p>ID Sucursal:</p>
+      <input type="text" formControlName="idSucursal" required minlength="4" maxlength="4">
+    </label>
+  
+    <label class="apartados">
+        <p>ID Cliente:</p>
+        <input type="text" formControlName="idCliente">
+    </label>
+
+    <label class="apartados">
+        <p>Monto de Descuento:</p>
+        <input type="text" formControlName="montoDescuento" required pattern="[0-9].{0,}$">
+    </label>
+
+    <label class="apartados">
+        <p>Monto de Impuesto:</p>
+        <input type="text" formControlName="montoImpuesto" required pattern="[0-9].{0,}$">
+    </label>
+    
+    <label class="apartados">
+        <p>Monto Bruto:</p>
+        <input type="text" formControlName="montoBruto" required pattern="[0-9].{0,}$">
+    </label>    
+    
+    <label class="apartados">
+        <p>Fecha:</p>
+        <input type="text" placeholder="Año-Mes-Dia"  formControlName="fecha" required pattern="[0-9].{0,}$">
+    </label>
+
+    <label class="apartados">
+        <p>Tiempo de plazo:</p>
+        <input type="text" formControlName="plazo" required pattern="[0-9].{0,}$">
+    </label> 
+    
+    <label class="apartados">
+        <p>Id Cuenta:</p>
+        <input type="text" formControlName="idCuenta" >
+    </label>   
+
+    <button _ngcontent-vmx-c51="" class="apartados btn btn-lg btn-primary" type="submit" [disabled]="!profileForm.valid">Crear Factura</button>
+  </form>
+

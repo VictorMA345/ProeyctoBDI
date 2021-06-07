@@ -1,0 +1,65 @@
+<form class="formulario" [formGroup]="profileForm" (ngSubmit)="CrearCuenta()">
+    
+    <html>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-arial">Crear Cuenta</h1>
+        </div>
+    </html>
+  
+    <label class="apartados">
+        <p>ID Cliente:</p>
+        <input type="text" formControlName="idCliente">
+    </label>
+
+    <label class="apartados">
+        <p>Condicion Venta:<br>
+            <select formControlName="condicionVenta">
+            <option>Contado</option>
+            <option>Credito</option>
+            </select>
+        </p> 
+    </label>
+
+    <label class="apartados">
+        <p>Fecha:</p>
+        <input type="text" placeholder="Año-Mes-Dia"  formControlName="fecha" required pattern="[0-9].{0,}$">
+    </label>
+
+    <label class="apartados">
+        <p>Forma de Pago:<br>
+            <select formControlName="formaPago">
+            <option>Cheque</option>
+            <option>Contado</option>
+            <option>Tarjeta</option>
+            <option>Transferencia electronica</option>
+            </select>
+        </p> 
+    </label>
+    
+    <label class="apartados">
+        <p>Saldo:</p>
+        <input type="text" formControlName="saldo" required pattern="[0-9].{0,}$">
+    </label>       
+
+    <label class="apartados">
+        <p>Tiempo de plazo:</p>
+        <input type="text" formControlName="plazo" required pattern="[0-9].{0,}$">
+    </label> 
+
+    <label class="apartados">
+        <p>Forma de Pago:<br>
+            <select formControlName="moneda">
+            <option>₡</option>
+            <option>$</option>
+            <option>€</option>
+            </select>
+        </p> 
+    </label>
+    
+    <label class="apartados">
+        <p>Cambio Del Día:</p>
+        <input type="text" formControlName="cambio" required pattern="[0-9].{0,}$">
+    </label> 
+
+    <button _ngcontent-vmx-c51="" class="apartados btn btn-lg btn-primary" type="submit" [disabled]="!profileForm.valid">Crear Cuenta</button>
+  </form>

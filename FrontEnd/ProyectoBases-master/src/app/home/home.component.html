@@ -1,0 +1,55 @@
+<div class="container py-3">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        
+        <span class="fs-4">{{namePage}}</span>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto ">
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/CrearClientes']">Crear Cliente</a>
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/CrearAbono']">Crear Abono</a>
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/CrearAuditoria']">Crear Auditoria</a>
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/CrearSucursal']">Crear Sucursal</a>
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/FacturaCredito']">Factura Credito</a>
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/FacturaContado']">Factura Contado</a>
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/CrearNota']">Crear Nota</a>
+        <a class="me-3 py-2 text-dark text-decoration-none btn-outline-primary" [routerLink]="['/CrearCuenta']">Crear Cuenta</a>
+
+      </nav>
+    </div>
+
+    
+  </header>
+
+  <main>
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Facturación GG</h1>
+      <p class="fs-5 text-ceneter">Con GG, su factoración es segura, 
+        ordenada y precisa, no lo piense más contrate su software de Facturación
+        con GG
+      </p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Free</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>10 users included</li>
+              <li>2 GB of storage</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </main>  
+</div>
