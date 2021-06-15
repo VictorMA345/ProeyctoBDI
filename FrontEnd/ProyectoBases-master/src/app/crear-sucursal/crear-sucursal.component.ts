@@ -28,12 +28,13 @@ export class CrearSucursalComponent implements OnInit {
   CrearSucursal(){
     console.log(this.profileForm.value);
     this.dataService.CrearSucursal(this.profileForm.value).toPromise().then((res:any)=>{
+      Swal.fire(`Creado satisfactoriamente`)
     /*if(res[0].code == 201){
       Swal.fire(`Created successfully`);
      //this.get_Surveyed();
     }*/
   }, (error)=>{
-    alert(error.message);
+    Swal.fire(`Error a la hora de crear sucursal`)
   });
   }
 

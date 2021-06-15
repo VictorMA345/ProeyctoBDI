@@ -1,52 +1,45 @@
 <form class="formulario" [formGroup]="profileForm" (ngSubmit)="IngresarCliente()">
   
+  <h1 class="titulo display-4 fw-arial">Crear Clientes</h1>
+  
   <label class="apartados">
     <p>Cedula:</p> 
-    <input type="text" formControlName="idCliente">
+    <input class="apartados" type="text" formControlName="idCliente">
   </label>
 
-  <label class="apartados">
-    
-    <p>Nombre:</p> 
-    <input type="text" formControlName="nombre">
-  </label>
-
-  <label class="apartados">
-      <p>Dirección:</p> 
-      <input type="text"  formControlName="direccionExacta">
+    <label class="apartados">    
+      <p>Nombre:</p> 
+      <input class="apartados" type="text" formControlName="nombre">
     </label>
+
+    <label class="apartados">
+      <p>Dirección:</p> 
+      <input class="apartados" type="text"  formControlName="direccionExacta">
+    </label>
+
     <label class="apartados">
       <p>Correo Electronico:</p> 
-      <input type="text" formControlName="correo">
+      <input class="apartados" type="text" formControlName="correo">
     </label>
+
     <label class="apartados">
       <p>Telefono:</p>       
-      <input type="text" formControlName="telefono">
-    </label>
-
-    <label class="apartados">
-      <p>Direccion:</p> 
-      <input type="text" formControlName="direccionExacta">
-    </label>
-
-    <label class="apartados">
-      <p>Provincia:</p> 
-      <input type="text" formControlName="direccionExacta">
+      <input class="apartados" type="text" formControlName="telefono">
     </label>
 
     <label class="apartados">
       <p>Distrito:</p> 
-      <input type="text" formControlName="nombreDistrito">
+      <input class="apartados" type="text" formControlName="nombreDistrito">
     </label>
 
     <label class="apartados">
-      <p>Cantón</p>       
-      <input type="text" formControlName="nombreCanton">
+      <p>Cantón:</p> 
+      <input class="apartados" type="text" formControlName="nombreCanton">
     </label>
 
     <label class="apartados">
-      <p>Provincia:</p>       
-      <input type="text" formControlName="nombreProvincia">
+      <p>Provincia</p>       
+      <input class="apartados" type="text" formControlName="nombreProvincia">
     </label>
 
   <button class="apartados btn btn-primary btn-lg btn-block" type="submit" [disabled]="!profileForm.valid">Crear Cliente</button>

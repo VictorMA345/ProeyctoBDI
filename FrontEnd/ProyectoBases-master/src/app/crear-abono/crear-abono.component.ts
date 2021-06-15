@@ -20,7 +20,6 @@ export class CrearAbonoComponent implements OnInit {
     monto: new FormControl('')
   });
   constructor(private dataService: DataService) {
-    console.log("Estoy en clientes")
    }
 
   ngOnInit(): void {
@@ -28,13 +27,10 @@ export class CrearAbonoComponent implements OnInit {
 
   InsertarAbono(){
     console.log(this.profileForm.value)
-    this.dataService.InsertarAbono(this.profileForm.value).toPromise().then((res:any)=>{
-      //if(res[0].code == 201){
-        Swal.fire(`Created successfully`);
-       //this.get_Surveyed();
-      //}
-    }, (error)=>{
-      alert(error.message);
-    });
+    this.dataService.InsertarAbono(this.profileForm.value).toPromise().then((res:any)=>{      
+      Swal.fire(`Creada satisfactoriamente`);
+      }, (error)=>{
+        Swal.fire(`Error a la hora de crear el abono`)
+      });
   }
 }

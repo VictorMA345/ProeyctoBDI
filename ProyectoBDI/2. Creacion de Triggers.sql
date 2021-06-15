@@ -43,4 +43,42 @@ end
 go
 
 
+Create trigger verificarNota on 
+Nota 
+for insert,update
+as
+Declare @fechaNota Date
+Declare @idFacturaNota int
+set @fechaNota = (select top 1 fecha from inserted)
+set @idFacturaNota = (select top 1 idFacturaC from inserted)
+if ((select f.fecha from FacturasCredito as f where idFacturaC = @idFacturaNota) > @fechaNota or (select f.fechaVencimiento from FacturasCredito as f where idFacturaC = @idFacturaNota) < @fechaNota)
+    rollback transaction;
+go
 
+
+Create trigger verificarMonto on Nota
+for insert,update
+as
+declare @montoFactura float
+set @montoFactura = (select montoNeto from FacturasCredito where idFacturaC = (select top 1 idFacturaC from inserted))
+if(@montoFactura < (select top 1 monto from inserted))
+    rollback transaction
+go
+
+
+Create trigger verificarFactura on 
+FacturasCredito 
+for insert,update
+as
+Declare @fechaFactura Date
+Declare @idCuentaFactura int
+Declare @fechaVFactura DATE
+set @fechaFactura = (select top 1 fecha from inserted)
+set @idCuentaFactura = (select top 1 idCuentaPorCobrar from inserted)
+set @fechaVFactura = DATEADD(MONTH,(select top 1 plazo from inserted),@fechaFactura)
+
+if ((select f.fecha from cuentaPorCobrar as f where idCuentaPorCobrar = @idCuentaFactura) > @fechaFactura or (select f.fechaDeVencimiento from cuentaPorCobrar as f where idCuentaPorCobrar = @idCuentaFactura) < @fechaFactura)
+    rollback transaction;
+if((select f.fechaDeVencimiento from cuentaPorCobrar as f where idCuentaPorCobrar = @idCuentaFactura) < @fechaVFactura or (select f.fecha from cuentaPorCobrar as f where idCuentaPorCobrar = @idCuentaFactura) > @fechaVFactura)
+    rollback transaction;
+go	   	

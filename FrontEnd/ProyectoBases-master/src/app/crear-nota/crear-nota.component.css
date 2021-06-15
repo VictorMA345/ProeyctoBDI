@@ -1,17 +1,20 @@
 .formulario{
-    width: 50%;
-    background: rgba(88, 88, 88, 0.753);
+    width: 30%;
+    background: rgba(38, 39, 39, 0.753);
     height: auto;
-    margin-left: 25%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    box-shadow: 0px 0px 5px 1px rgb(23, 24, 24);
+    margin-left: 35%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 5px 1px rgb(66, 66, 66);
 }
 
+h1{
+    text-align: center;
+}
 .apartados{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 50%;
-    margin-left: 25%;
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 10%;
     display: inline-block;
 }

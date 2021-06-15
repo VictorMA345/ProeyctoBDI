@@ -1,40 +1,36 @@
 <form class="formulario" [formGroup]="profileForm" (ngSubmit)="CrearFacturaContado()">
     
-    <html>
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-arial">Facturas de Contado</h1>
-        </div>
-    </html>
+    <h1 class="titulo display-4 fw-arial">Factura de contado</h1>
 
     <label class="apartados">
         <p>ID Sucursal:</p>
-      <input type="text" formControlName="idSucursal" required minlength="4" maxlength="4">
+      <input class="apartados" type="text" formControlName="idSucursal" required minlength="4" maxlength="4">
     </label>
   
     <label class="apartados">
         <p>ID Cliente:</p>
-        <input type="text" formControlName="idCliente">
+        <input class="apartados" type="text" formControlName="idCliente">
     </label>
 
     <label class="apartados">
         <p>Monto de Descuento:</p>
-        <input type="text" formControlName="montoDescuento" required pattern="[0-9].{0,}$">
+        <input class="apartados" type="text" formControlName="montoDescuento" required pattern="[0-9].{0,}$">
     </label>
 
     <label class="apartados">
         <p>Monto de Impuesto:</p>
-        <input type="text" formControlName="montoImpuesto" required pattern="[0-9].{0,}$">
+        <input class="apartados" type="text" formControlName="montoImpuesto" required pattern="[0-9].{0,}$">
     </label>
     
     <label class="apartados">
         <p>Monto de Neto:</p>
-        <input type="text" formControlName="montoNeto" required pattern="[0-9].{0,}$">
+        <input class="apartados" type="text" formControlName="montoNeto" required pattern="[0-9].{0,}$">
     </label>    
     
     <label class="apartados">
         <p>Fecha:</p>
-        <input type="text" placeholder="Año-Mes-Dia"  formControlName="fecha" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+        <input class="apartados" type="text" placeholder="Año-Mes-Dia"  formControlName="fecha" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
     </label>
 
-    <button _ngcontent-vmx-c51="" class="apartados btn btn-lg btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+    <button _ngcontent-vmx-c51="" class="apartados btn btn-lg btn-primary" type="submit" [disabled]="!profileForm.valid">Crear Factura</button>
   </form>

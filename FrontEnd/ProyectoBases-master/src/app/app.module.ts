@@ -4,7 +4,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrearClientesComponent } from './crear-clientes/crear-clientes.component';
-import { CrearFacturasComponent } from './crear-facturas/crear-facturas.component';
 import { CrearAuditoriaComponent } from './crear-auditoria/crear-auditoria.component';
 import { HomeComponent } from './home/home.component';
 import { CrearAbonoComponent } from './crear-abono/crear-abono.component';
@@ -14,12 +13,15 @@ import { FacturaCreditoComponent } from './factura-credito/factura-credito.compo
 import { FacturaContadoComponent } from './factura-contado/factura-contado.component';
 import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { CrearFacturaComponent } from './crear-facturas/crear-factura.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearClientesComponent,
-    CrearFacturasComponent,
     CrearAuditoriaComponent,
     HomeComponent,
     CrearAbonoComponent,
@@ -28,6 +30,7 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
     FacturaContadoComponent,
     CrearNotaComponent,
     CrearCuentaComponent,
+    CrearFacturaComponent,
     
     
   ],
@@ -35,7 +38,10 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
 
   ],
   providers: [],

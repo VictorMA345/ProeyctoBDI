@@ -28,14 +28,10 @@ export class CrearCuentaComponent implements OnInit {
     }
   
     CrearCuenta(){
-      console.log(this.profileForm.value)
       this.dataService.CrearCuenta(this.profileForm.value).toPromise().then((res:any)=>{
-        /*if(res[0].code == 201){
-          Swal.fire(`Created successfully`);
-         //this.get_Surveyed();
-        }*/
+        Swal.fire(`Creada satisfactoriamente`);
       }, (error)=>{
-        alert(error.message);
+        Swal.fire(`Error a la hora de crear la cuenta`)
       });
     }
   }

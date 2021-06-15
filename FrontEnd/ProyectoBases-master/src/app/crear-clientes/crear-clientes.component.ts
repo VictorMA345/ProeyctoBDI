@@ -33,15 +33,11 @@ export class CrearClientesComponent{
 
 
   IngresarCliente() {
-    console.log(this.profileForm.value)
     this.dataService.IngresarCliente(this.profileForm.value).toPromise().then((res:any)=>{
-    if(res[0].code == 201){
-      Swal.fire(`Created successfully`);
-     //this.get_Surveyed();
-    }
-  }, (error)=>{
-    alert(error.message);
-  });
+      Swal.fire(`Creado satisfactoriamente`);
+      }, (error)=>{
+        Swal.fire(`Error a la hora de crear el cliente`)
+      });
   }
   
 }

@@ -49,7 +49,7 @@ class Server {
    * Config of routes
    */
   routerConfig(): void {
-    this.app.use("/api/Json", SurveyedRouter);
+    this.app.use("/api/json", SurveyedRouter);
 
    //Set Port
    
